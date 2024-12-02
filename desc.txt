@@ -1,0 +1,115 @@
+ESGCountry:
+Country Code, Short Name, Table Name, Long Name, 2-alpha code, Currency Unit, Special Notes, Region, Income Group, WB-2 code, National accounts base year, National accounts reference year, SNA price valuation, Lending category, Other groups, System of National Accounts, Alternative conversion factor, PPP survey year, Balance of Payments Manual in use, External debt Reporting status, System of trade, Government Accounting concept, IMF data dissemination standard, Latest population census, Latest household survey, Source of most recent Income and expenditure data, Vital registration complete, Latest agricultural census, Latest industrial data, Latest trade data, Latest water withdrawal data
+
+ESGCountrySeries:
+CountryCode, SeriesCode, DESCRIPTION
+
+ESGCSV:
+Country Name, Country Code, Indicator Name, Indicator Code, 1960, 1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023
+
+ESGFootnote:
+CountryCode, SeriesCode, Year, DESCRIPTION
+
+ESGSeries:
+Series Code, Topic, Indicator Name, Short definition, Long definition, Unit of measure, Periodicity, Base Period, Other notes, Aggregation method, Limitations and exceptions, Notes from original source, General comments, Source, Statistical concept and methodology, Development relevance, Related source links, Other web links, Related indicators, License Type
+
+ESGSeriesTime:
+SeriesCode, Year, DESCRIPTION
+
+
+     .withColumn("MainCategory", split(col("Topic"), ": ")[0])
+             .withColumn("SubCategory", split(col("Topic"), ": ")[1])
+
+
+.selectExpr(
+    "`Country Name`",
+    "`Country Code`",
+    "`Indicator Name`",
+    "`Indicator Code`",
+    f"stack({2023 - 1990 + 1}, " +
+    ", ".join([f"'{year}', `{year}`" for year in range(1990, 2024)]) + ") as (Year, Value)"
+)
+.withColumn("Year", col("Year").cast("int"))
+                           .withColumn("Value", col("Value").cast("float")))
+
+
+
+
+ESGCountry.csv
+Remove duplicate rows based on Country Code.
+Handle missing values in Region and Income Group by filling with "Unknown" or a default value.
+Standardize country names (e.g., "United States" vs. "USA").
+Ensure all Country Code values match those in ESGCSV.csv.
+
+
+
+ESGcountry-series.csv
+Filter rows where SeriesCode is relevant to your analysis (e.g., EG.FEC.RNEW.ZS).
+Remove duplicates based on CountryCode and SeriesCode.
+Ensure CountryCode matches the codes in ESGCSV.csv.
+
+
+
+ESGfootnote.csv
+Remove duplicate rows based on CountryCode, SeriesCode, and Year.
+Ensure SeriesCode is relevant to the indicator (EG.FEC.RNEW.ZS).
+Clean or shorten lengthy descriptions in DESCRIPTION if needed for easier use.
+
+
+
+ESGSeries.csv
+Remove duplicate rows based on Series Code.
+Ensure Series Code matches the codes in ESGCSV.csv.
+Standardize fields like Indicator Name and Source.
+Fill missing values in Topic or Long definition with "Unknown" or a default text.
+
+
+
+ESGseries-time.csv
+Remove duplicate rows based on SeriesCode and Year.
+Filter rows where SeriesCode matches the indicator (EG.FEC.RNEW.ZS).
+Ensure Year values align with the range in ESGCSV.csv (e.g., 1960–2023).
+
+
+
+ESGCSV.csv
+Remove duplicate rows based on Country Code, Year, and Indicator Code.
+Unpivot yearly columns (1960 to 2023) into a long format (Year, Value).
+Ensure Indicator Code matches Series Code in ESGSeries.csv.
+Handle missing values in yearly data (Value) by forward-fill, backward-fill, or imputation.
+Standardize country names to match ESGCountry.csv.
+
+
+
+
+Sources: Estimated based on UN Energy Statistics (2014); World Development Indicators, WDI (2014)
+Ministry of Communications. Ministry of Communications & Information Technology
+Data source: United Nations World Population Prospects
+
+
+
+45 reserved seats reserved for women are yet to be filled in 2008."
+
+
+
+
+FactESG	CountryCode, SeriesCode, EsgYear, Valu
+
+CountryCode	Primary key.
+CountryName	Descriptive name for the country.
+Region	Geographical grouping (e.g., MENA, Europe).
+IncomeGroup	Economic classification (e.g., Low income).
+
+
+SeriesCode	Primary key.
+IndicatorName	Full name of the indicator.
+Topic	High-level ESG category (e.g., Environmental).
+Source	Data source for the indicator.
+Longdefinition	Detailed explanation of the indicator.
+MainCategory	Broader grouping of indicators (if applicable).
+SubCategory	Specific sub-grouping (if applicable).
+
+
+CountryCode	Foreign key linking to DimCountry.
+SeriesCode	Foreign key linking to DimIndicator.
+CountrySerieDescription	Description of the series for the country.

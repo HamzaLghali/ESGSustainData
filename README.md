@@ -1,70 +1,41 @@
-# Sustain Esg Data
+# 🌍 Sustain Data: A Journey into ESG through Big Data 📊
+Have you ever wondered why Environmental, Social, and Governance (ESG) topics are shaping the future of global sustainability? Despite its growing importance, I realized that many in the tech domain, especially in Morocco, remain unfamiliar with ESG. This inspired me to create the Sustain Data project—a unique exploration of ESG concepts through data engineering and visualization.
 
-## 🌍 Sustain Data: A Journey into ESG through Big Data 📊
-Welcome to Sustain Data, an innovative data engineering project that merges the power of big data with the principles of Environmental, Social, and Governance (ESG). This project is designed to educate, inspire, and drive awareness about the critical role ESG metrics play in shaping sustainable business practices.
+## Why Sustain Data?
+This project is not just a technical showcase but also a resource for anyone curious about ESG. By examining visualizations and reviewing the analysis, even beginners can grasp the importance of ESG metrics and their potential for shaping a sustainable future.
 
-## 📌 What is ESG?
-ESG stands for Environmental, Social, and Governance, a framework used to evaluate how responsibly companies operate in the following domains:
+## What is ESG?
+ESG stands for Environmental, Social, and Governance, a framework for assessing responsibility metrics. While ESG is often used to evaluate companies, this project applies the same principles to countries, offering insights into how nations perform across key sustainability dimensions:
 
-#### Environmental:
-Focuses on how a company safeguards the environment, with indicators like renewable energy usage, waste management, and climate change mitigation.
+Environmental: How does a country safeguard the environment? Indicators include renewable energy consumption, resource efficiency, and climate adaptation.
+Social: How does it manage societal equity and well-being? Metrics include income distribution, labor practices, and community engagement.
+Governance: How effective and ethical is its leadership? This involves governance quality, accountability, and public participation.
+The Sustain Data Project
+This project explores ESG indicators for countries in the Middle East & North Africa and Europe & Central Asia regions, including Morocco, Netherlands, Qatar, France, Belgium, Russia, and the United Arab Emirates.
+
+## Indicators:
+#### Environment:
+Renewable energy consumption.
+Heating and Cooling Degree Days.
 #### Social:
-Examines how a company manages relationships with employees, suppliers, customers, and communities. Metrics here might include diversity, labor practices, and societal impact.
+Income share as a measure of social equity.
 #### Governance:
-Evaluates leadership ethics and corporate governance practices, including executive pay, internal audits, shareholder rights, and accountability.
-ESG metrics are not just buzzwords—they are increasingly vital for businesses, investors, and regulators aiming to build a sustainable future.
-
-## 🚀 The Sustain Data Project
-Mission
-This project introduces ESG concepts through the lens of data engineering and visualization, showcasing how data-driven insights can shape a sustainable world.
-
-Key Objectives
-Educate: Simplify ESG concepts for beginners, especially in the tech domain.
-Visualize: Use compelling visuals to make ESG data insights accessible and actionable.
-Inspire: Encourage adoption of ESG practices within the tech and data engineering communities.
-Features
-Data Sourcing:
-
-Leveraged datasets from reliable sources like the World Bank.
-Focused on indicators representing Environmental, Social, and Governance domains:
-Environment: Renewable energy consumption.
-Social: (Specify your social indicator here).
-Governance: (Specify your governance indicator here).
-Big Data Engineering:
-
-Built using Azure Databricks, PySpark, and other big data technologies.
-Designed to process, clean, and transform large ESG datasets.
-Visualization:
-
-Created impactful visual dashboards using Power BI to highlight trends and correlations among ESG indicators.
-🛠 Technology Stack
-Azure Databricks Notebooks: For data engineering workflows and analysis.
-PySpark: To handle large-scale data processing.
-Power BI: For dynamic and interactive visualizations.
-GitHub: For version control and collaboration.
-## 📊 Insights and Highlights
-Discovered trends in renewable energy consumption and its correlation with GDP growth in various regions.
-Analyzed social and governance metrics to uncover actionable insights for policy-makers and organizations.
-Visual examples and dashboards can be accessed in the repository.
+Voice and Accountability as an indicator of governance quality.
+Metrics and Insights
+## Environment Metrics:
+Energy Efficiency in Hotter Climates: Examines the relationship between renewable energy consumption and cooling degree days.
+Impact of Temperature on Renewable Energy: Analyzes how climate impacts renewable energy use over time.
+Trend of Cooling Degree Days: Tracks changes in cooling energy demand across countries.
+Correlation Analysis: Explores relationships between cooling degree days and renewable energy usage.
+Average Renewable Energy Consumption: Highlights top countries in renewable energy adoption.
+Renewable Energy Adoption Rankings: Ranks countries based on their renewable energy consumption for the latest year.
+## Social Metrics:
+Income Share Analysis: Studies income distribution patterns to assess social equity across countries.
+## Governance Metrics:
+Voice and Accountability: Evaluates the quality of governance and citizen participation in decision-making.
 
 
-## 🎯 Why Sustain Data?
-Awareness: Educate tech professionals and data enthusiasts about the importance of ESG.
-Action: Showcase practical applications of ESG data in real-world scenarios.
-Inspiration: Empower communities to take steps toward sustainability through informed decision-making.
+## Why ESG Matters?
+ESG is not just a buzzword it’s the future. By focusing on the ESG performance of countries, this project broadens the scope of sustainability discussions, providing valuable insights for governments, researchers, and policymakers. Through Sustain Data, I aim to contribute to the understanding and adoption of ESG principles, particularly within the tech and data engineering communities.
 
-## 📖 Learn More
-Explore the world of ESG and its potential:
-
-World Bank Data
-ESG Investing Guide
-🤝 Contributing
-Contributions are welcome! Feel free to submit a pull request or suggest enhancements to the project.
-
-💡 Future Enhancements
-Include additional ESG metrics for deeper analysis.
-Automate data ingestion using Apache Airflow.
-Expand visualizations with more advanced analytics.
-
-🌟 Let's Build a Sustainable Future Together!
-Whether you're a beginner or an experienced data engineer, Sustain Data offers something for everyone. Join us on this journey to combine data and sustainability. Together, we can make a difference!
+Let’s build a sustainable future together! 🌍
